@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="lobby" id="lobby">
+    <div class="lobby-box">
+      <h1>🚀 Welcome to Pro Chat</h1>
+      <input type="text" id="name" placeholder="Username" required />
+      <input type="text" id="room" placeholder="Room name" required />
+      <button id="enter">Join</button>
+      <p id="nameErr" class="hidden">❗ Username already in use.</p>
+    </div>
+  </div>
+
+  <div class="chat-container hidden" id="chat">
+    <aside class="sidebar">
+      <h2>Rooms</h2>
+      <ul id="rooms"></ul>
+      <h2>Users</h2>
+      <ul id="users"></ul>
+    </aside>
+
+    <main class="chat-main">
+      <header>
+        <h2 id="room-name">Chat Room</h2>
+      </header>
+
+      <ul id="messages" class="chat-messages"></ul>
+
+      <form id="msgForm" class="message-form">
+        <input id="msgInput" autocomplete="off" placeholder="Type a message..." />
+        <button>Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
